@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saini Sweets, Fast Food & Bakery | Ballah, Karnal</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Indulge in authentic traditional Indian sweets, pure desi ghee delicacies, fresh cakes, pastries, and sizzling hot fast food at Saini Sweets, Fast Food & Bakery. Ballah, Karnal.">
+  <meta name="keywords"
+    content="Saini Sweets Ballah, Saini Bakery Ballah, Sweets Shop Ballah, Cakes Ballah, Jalebi Ballah, Chole Bhature Ballah, Fast Food Karnal">
+  <meta name="author" content="Saini Sweets, Fast Food & Bakery">
+  <meta property="og:title" content="Saini Sweets, Fast Food & Bakery | Ballah, Karnal">
+  <meta property="og:description"
+    content="Indulge in premium traditional sweets, fresh cakes and pastries, and delicious Indian fast food. Ballah, Karnal. Order via WhatsApp!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sainisweetsballah.com">
+
+  <!-- Google Fonts: Inter for clean, easy readability -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#D2530A', // Bold Warm Orange
+              light: '#E8652A',
+              dark: '#A83E06',
+            },
+            secondary: {
+              DEFAULT: '#F5A623', // Bright Amber
+              light: '#FFBA45',
+              dark: '#C07D0A',
+            },
+            gold: {
+              DEFAULT: '#D4AF37', // Shahi Gold
+              light: '#E5C054',
+              dark: '#A68720',
+            },
+            cream: {
+              DEFAULT: '#FFFDF9', // Warm off-white
+              dark: '#F5F0E6',
+            },
+            charcoal: {
+              DEFAULT: '#1E1E1E',
+              light: '#4A4A4A',
+              dark: '#0A0A0A',
+            }
+          },
+          fontFamily: {
+            sans: ['"Inter"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            inter: ['"Inter"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'premium': '0 10px 30px -5px rgba(210, 83, 10, 0.12), 0 8px 20px -6px rgba(245, 166, 35, 0.08)',
+            'gold-glow': '0 4px 20px -2px rgba(245, 166, 35, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-traditional-pattern font-outfit text-charcoal leading-relaxed overflow-x-hidden">
+
+  <!-- Header & Navigation -->
+  <header
+    class="sticky top-0 z-40 w-full backdrop-blur-md bg-cream/90 border-b border-primary/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Logo / Brand Title -->
+        <a href="#" class="flex items-center space-x-3 group">
+          <div
+            class="rounded-[1.75rem] w-12 h-12 bg-gradient-to-tr from-primary to-secondary flex items-center justify-center shadow-md shadow-primary/20">
+            <!-- Custom Geometric Lotus/Sweet SVG Logo -->
+            <img src="./images/logo.jpg" alt="logo" class="rounded-[1.75rem] w-full h-full object-cover">
+          </div>
+          <div>
+            <span class="block text-2xl font-bold font-playfair text-primary tracking-wide leading-none">Saini
+              Sweets</span>
+            <span class="block text-[10px] uppercase font-bold tracking-widest text-secondary mt-1 font-outfit">& Fast
+              Food & Bakery</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#" class="text-charcoal hover:text-primary font-semibold transition-colors duration-200">Home</a>
+          <a href="#menu-section"
+            class="text-charcoal hover:text-primary font-semibold transition-colors duration-200">Our Menu</a>
+          <a href="#about-section"
+            class="text-charcoal hover:text-primary font-semibold transition-colors duration-200">Our Heritage</a>
+          <a href="#contact-section"
+            class="text-charcoal hover:text-primary font-semibold transition-colors duration-200">Find Us</a>
+        </nav>
+
+        <!-- Live Status Indicator & Quick Call Button (Desktop) -->
+        <div class="hidden md:flex items-center space-x-6">
+          <div id="shop-status-badge">
+            <!-- Dynamic Open/Closed Status will inject here -->
+            <span
+              class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-800">
+              <span class="w-2 h-2 mr-2 bg-gray-400 rounded-full"></span> Checking hours...
+            </span>
+          </div>
+          <a href="tel:+919034002077"
+            class="inline-flex items-center px-4 py-2 rounded-xl bg-gradient-to-r from-primary to-primary-light hover:from-secondary hover:to-secondary-light text-white font-semibold text-sm shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
+            <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+            Call to Order
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-primary hover:bg-primary/5 focus:outline-none"
+          aria-label="Toggle Menu">
+          <i data-lucide="menu" id="menu-icon-burger" class="w-6 h-6"></i>
+          <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav"
+      class="hidden md:hidden bg-cream border-t border-primary/10 py-4 px-6 space-y-4 animate-fade-in shadow-inner">
+      <div class="flex items-center justify-between pb-2 border-b border-primary/5">
+        <div id="shop-status-badge-mobile">
+          <!-- Dynamic Status badge -->
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <a href="#"
+          class="mobile-nav-link flex items-center p-3 rounded-xl bg-cream-dark/50 hover:bg-primary/5 text-charcoal font-medium">
+          <i data-lucide="home" class="w-4 h-4 mr-2 text-primary"></i> Home
+        </a>
+        <a href="#menu-section"
+          class="mobile-nav-link flex items-center p-3 rounded-xl bg-cream-dark/50 hover:bg-primary/5 text-charcoal font-medium">
+          <i data-lucide="utensils" class="w-4 h-4 mr-2 text-primary"></i> Menu
+        </a>
+        <a href="#about-section"
+          class="mobile-nav-link flex items-center p-3 rounded-xl bg-cream-dark/50 hover:bg-primary/5 text-charcoal font-medium">
+          <i data-lucide="sparkles" class="w-4 h-4 mr-2 text-primary"></i> Heritage
+        </a>
+        <a href="#contact-section"
+          class="mobile-nav-link flex items-center p-3 rounded-xl bg-cream-dark/50 hover:bg-primary/5 text-charcoal font-medium">
+          <i data-lucide="map-pin" class="w-4 h-4 mr-2 text-primary"></i> Find Us
+        </a>
+      </div>
+      <div class="pt-2">
+        <a href="tel:+919034002077"
+          class="w-full flex items-center justify-center p-3.5 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-center shadow-lg">
+          <i data-lucide="phone" class="w-5 h-5 mr-2 animate-bounce"></i> Call & Order Now
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-8 pb-16 md:py-24 overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-1/4 -right-12 w-64 h-64 rounded-full bg-secondary/5 blur-3xl"></div>
+    <div class="absolute bottom-10 -left-12 w-80 h-80 rounded-full bg-primary/5 blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div
+            class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary font-semibold text-xs tracking-wider uppercase">
+            ✨ Established Sweetness & Quality
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-playfair text-charcoal leading-tight">
+            Authentic Taste of <br class="hidden sm:inline">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-gold">
+              Traditional Indian Sweets
+            </span>
+          </h1>
+
+          <p class="text-lg text-charcoal-light max-w-2xl mx-auto lg:mx-0">
+            Savor the legacy of fresh, pure ghee sweets, crispy hot jalebis, and sizzling Indian fast food. Crafted
+            daily with love in the heart of <strong class="text-primary">Ballah, Karnal</strong>.
+          </p>
+
+          <!-- Quick Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="#menu-section"
+              class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-primary via-primary-light to-secondary hover:shadow-lg hover:shadow-primary/20 text-white font-bold text-lg transition-all duration-300 transform hover:-translate-y-1">
+              <i data-lucide="menu" class="w-5 h-5 mr-2"></i>
+              Explore Digital Menu
+            </a>
+            <a href="tel:+919034002077"
+              class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-cream border-2 border-primary/20 hover:border-primary text-primary font-bold text-lg transition-all duration-300 transform hover:-translate-y-1">
+              <i data-lucide="phone-call" class="w-5 h-5 mr-2"></i>
+              Call to Order
+            </a>
+          </div>
+
+          <!-- Fast Highlights -->
+          <div class="grid grid-cols-3 gap-4 pt-8 border-t border-primary/10 max-w-md mx-auto lg:mx-0">
+            <div class="text-center lg:text-left">
+              <span class="block text-2xl font-bold font-playfair text-primary">100%</span>
+              <span class="text-xs text-charcoal-light">Pure & Fresh</span>
+            </div>
+            <div class="text-center lg:text-left border-x border-primary/10 px-4">
+              <span class="block text-2xl font-bold font-playfair text-primary">Desi Ghee</span>
+              <span class="text-xs text-charcoal-light">Premium Ingredients</span>
+            </div>
+            <div class="text-center lg:text-left">
+              <span class="block text-2xl font-bold font-playfair text-primary">Fast Delivery</span>
+              <span class="text-xs text-charcoal-light">Fresh Hot Pickup</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Graphic (Large Custom SVG Graphic) -->
+        <div class="lg:col-span-5 flex justify-center relative">
+          <!-- Backplate Glow -->
+          <div
+            class="absolute w-72 h-72 rounded-full bg-gradient-to-tr from-gold/10 to-secondary/10 blur-2xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow">
+          </div>
+
+          <!-- Large Vector Graphic representing Sweet Assortments & Lassi -->
+          <div
+            class="w-full max-w-sm aspect-square bg-cream-dark/30 rounded-3xl p-6 border border-primary/5 shadow-premium animate-float relative z-10">
+            <img src="./images/logo.jpg" alt="saini sweets and fast foods" class="rounded-full">
+
+            <!-- Decorative floating badges -->
+            <!-- <div
+              class="absolute -top-4 -right-4 bg-white px-3 py-1.5 rounded-xl shadow-premium border border-primary/5 text-center">
+              <span class="block text-lg font-bold text-secondary leading-none">₹160/<sub>kg</sub></span>
+              <span class="text-[9px] uppercase font-bold text-charcoal-light">Special Jalebi</span>
+            </div> -->
+            <div
+              class="absolute -bottom-2 -left-4 bg-white px-3 py-1.5 rounded-xl shadow-premium border border-primary/5 text-center flex items-center space-x-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              <span class="text-[10px] font-bold text-charcoal">Pure Veg Only</span>
+            </div>
+          </div>
+        </div> 
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Bottom Cart Bar -->
+  <div id="sticky-cart-bar"
+    class="fixed bottom-0 left-0 right-0 z-40 px-4 pb-4 md:pb-6 pointer-events-none transform translate-y-full transition-transform duration-500 ease-out">
+    <div
+      class="max-w-xl mx-auto bg-gradient-to-r from-primary to-primary-dark backdrop-blur-md rounded-2xl shadow-2xl p-4 flex items-center justify-between text-white border border-gold/30 pointer-events-auto">
+
+      <!-- Cart Brief Information -->
+      <div class="flex items-center space-x-3.5 cursor-pointer" onclick="toggleCartDrawer(true)">
+        <div class="relative w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
+          <i data-lucide="shopping-bag" class="w-6 h-6 text-gold-light"></i>
+          <span id="cart-badge-count"
+            class="absolute -top-2 -right-2 bg-secondary text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center border border-primary-dark">0</span>
+        </div>
+        <div>
+          <span class="block text-xs text-white/75 font-semibold">Pickup Order</span>
+          <span id="cart-total-price" class="text-lg font-bold text-gold-light">₹0.00</span>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center space-x-2">
+        <button onclick="toggleCartDrawer(true)"
+          class="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm transition-all duration-200">
+          View Cart
+        </button>
+
+        <button onclick="sendWhatsAppOrder()"
+          class="inline-flex items-center px-4 py-2.5 rounded-xl bg-secondary hover:bg-secondary-light text-white font-bold text-sm shadow-md transition-all duration-200">
+          <span>Order Now</span>
+          <svg class="w-4 h-4 ml-1.5 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.588 1.976 14.111 1.01 11.999 1.01c-5.439 0-9.866 4.372-9.87 9.802 0 1.948.515 3.85 1.498 5.56l-.999 3.648 3.756-.974.263.155zm10.984-7.467c-.298-.148-1.766-.86-2.037-.957-.273-.098-.471-.148-.669.149-.197.297-.767.957-.94 1.156-.173.199-.347.223-.644.075-.297-.15-1.255-.456-2.39-1.458-.883-.778-1.48-1.74-1.653-2.038-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.59-.916-2.185-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.766-.713 2.013-1.402.248-.688.248-1.278.173-1.402-.075-.125-.272-.198-.57-.347z" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Shopping Cart Slide-Up Drawer Overlay -->
+  <div id="cart-drawer-overlay"
+    class="fixed inset-0 bg-charcoal/60 z-50 pointer-events-none opacity-0 transition-opacity duration-300 flex items-end justify-center">
+    <!-- Drawer Container -->
+    <div id="cart-drawer-container"
+      class="w-full max-w-xl bg-cream rounded-t-3xl shadow-2xl p-6 border-t border-primary/20 transform translate-y-full transition-transform duration-300 ease-out pointer-events-auto max-h-[85vh] flex flex-col">
+
+      <!-- Drawer Header -->
+      <div class="flex items-center justify-between pb-4 border-b border-primary/10 flex-shrink-0">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="shopping-bag" class="w-6 h-6 text-primary"></i>
+          <h2 class="text-xl font-bold font-playfair text-charcoal">Your Pickup Order</h2>
+        </div>
+        <button onclick="toggleCartDrawer(false)"
+          class="p-2 rounded-xl hover:bg-primary/5 text-charcoal-light hover:text-primary">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Drawer Content (Scrollable list of items) -->
+      <div id="cart-drawer-list" class="flex-grow overflow-y-auto py-4 space-y-4">
+        <!-- Rendered cart items will go here -->
+      </div>
+
+      <!-- Order Instructions / Notes -->
+      <div class="py-3 border-t border-primary/5 flex-shrink-0">
+        <label for="order-notes" class="block text-xs font-bold text-charcoal-light uppercase mb-1.5 flex items-center">
+          <i data-lucide="message-square" class="w-3.5 h-3.5 mr-1 text-secondary"></i> Add Special Instructions
+          (Optional)
+        </label>
+        <input type="text" id="order-notes" placeholder="Example: Make Jalebi extra hot, Less spicy samosa..."
+          class="w-full px-4 py-2.5 text-sm rounded-xl border border-primary/15 bg-white focus:outline-none focus:border-secondary transition-all">
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="pt-4 border-t border-primary/10 space-y-4 flex-shrink-0">
+        <div class="flex justify-between items-center text-charcoal">
+          <span class="font-medium text-sm">Estimated Total (Inclusive of all taxes):</span>
+          <span id="cart-drawer-total" class="text-2xl font-bold text-primary">₹0.00</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <button onclick="clearCart()"
+            class="w-full py-3.5 rounded-xl border-2 border-primary/15 hover:border-primary text-primary hover:bg-primary/5 font-semibold text-sm transition-all duration-200">
+            Clear Cart
+          </button>
+
+          <button onclick="sendWhatsAppOrder()"
+            class="w-full inline-flex items-center justify-center py-3.5 rounded-xl bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/20 text-white font-bold text-sm transition-all duration-200">
+            <svg class="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.588 1.976 14.111 1.01 11.999 1.01c-5.439 0-9.866 4.372-9.87 9.802 0 1.948.515 3.85 1.498 5.56l-.999 3.648 3.756-.974.263.155zm10.984-7.467c-.298-.148-1.766-.86-2.037-.957-.273-.098-.471-.148-.669.149-.197.297-.767.957-.94 1.156-.173.199-.347.223-.644.075-.297-.15-1.255-.456-2.39-1.458-.883-.778-1.48-1.74-1.653-2.038-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.59-.916-2.185-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.766-.713 2.013-1.402.248-.688.248-1.278.173-1.402-.075-.125-.272-.198-.57-.347z" />
+            </svg>
+            <span>Send Order (WhatsApp)</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Interactive Digital Menu Section -->
+  <section id="menu-section" class="py-16 md:py-24 bg-cream-dark/25 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <div class="text-center space-y-4 mb-12">
+        <span class="text-secondary font-bold text-sm tracking-widest uppercase">Freshly Prepared Daily</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-playfair text-charcoal">
+          Explore Our Digital Menu
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+        <p class="text-charcoal-light max-w-xl mx-auto text-sm sm:text-base">
+          Browse through our curated menu. Select your items, choose the quantities, and order instantly for fresh
+          pickup in-store.
+        </p>
+      </div>
+
+      <!-- Search and Tab Controller Container -->
+      <div class="max-w-4xl mx-auto mb-10 space-y-6">
+
+        <!-- Premium Tabs -->
+        <div class="grid grid-cols-3 gap-1 p-1.5 bg-cream border border-primary/10 rounded-2xl shadow-sm">
+          <button id="tab-sweets" onclick="setActiveTab('sweets')"
+            class="py-3 sm:py-4 rounded-xl font-bold text-xs sm:text-sm md:text-base flex flex-col sm:flex-row items-center justify-center transition-all duration-300 bg-primary text-white shadow-premium">
+            <span class="mb-0.5 sm:mb-0 sm:mr-2 text-base sm:text-lg">🍬</span>
+            <span><span class="hidden md:inline">Traditional </span>Sweets</span>
+          </button>
+          <button id="tab-snacks" onclick="setActiveTab('snacks')"
+            class="py-3 sm:py-4 rounded-xl font-bold text-xs sm:text-sm md:text-base flex flex-col sm:flex-row items-center justify-center transition-all duration-300 text-charcoal hover:text-primary">
+            <span class="mb-0.5 sm:mb-0 sm:mr-2 text-base sm:text-lg">🌶️</span>
+            <span>Fast Food<span class="hidden md:inline"> & Snacks</span></span>
+          </button>
+          <button id="tab-bakery" onclick="setActiveTab('bakery')"
+            class="py-3 sm:py-4 rounded-xl font-bold text-xs sm:text-sm md:text-base flex flex-col sm:flex-row items-center justify-center transition-all duration-300 text-charcoal hover:text-primary">
+            <span class="mb-0.5 sm:mb-0 sm:mr-2 text-base sm:text-lg">🍰</span>
+            <span>Bakery<span class="hidden md:inline"> Delights</span></span>
+          </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="relative">
+          <i data-lucide="search"
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 text-charcoal-light/75 w-5 h-5"></i>
+          <input type="text" id="menu-search" oninput="handleSearch()"
+            placeholder="Search sweet jalebi, samosa, milk cake..."
+            class="w-full pl-12 pr-10 py-4 bg-cream rounded-2xl border border-primary/10 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/50 shadow-sm text-sm sm:text-base transition-all">
+          <button id="search-clear-btn" onclick="clearSearch()"
+            class="hidden absolute right-4 top-1/2 transform -translate-y-1/2 text-charcoal-light hover:text-primary">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Menu Items Grid -->
+      <div id="menu-grid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto min-h-[300px] transition-opacity duration-300">
+        <!-- Rendered items go here dynamically from Javascript -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="menu-empty-state" class="hidden text-center py-16 space-y-4">
+        <div class="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto text-primary">
+          <i data-lucide="search-slash" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-lg font-bold text-charcoal">No items match your search</h3>
+        <p class="text-charcoal-light text-sm">Try typing something else or browse categories.</p>
+        <button onclick="clearSearch()"
+          class="inline-flex items-center px-4 py-2 rounded-xl bg-primary text-white font-semibold text-xs transition-colors">
+          Clear Search
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Heritage / About Section -->
+  <section id="about-section" class="py-16 md:py-24 overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+        <!-- Left Side: Custom Mandala SVG Artwork and Visual Highlights -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="w-full max-w-sm p-6 bg-cream border border-primary/10 rounded-3xl shadow-premium relative">
+            <div
+              class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-secondary flex items-center justify-center text-white shadow-lg shadow-secondary/30 transform -rotate-12">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+
+            <svg class="w-full aspect-square" viewBox="0 0 100 100" fill="none">
+              <!-- Heritage graphic pattern -->
+              <circle cx="50" cy="50" r="45" stroke="#8C1D1D" stroke-width="0.5" opacity="0.3" />
+              <circle cx="50" cy="50" r="40" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="3 3" />
+              <circle cx="50" cy="50" r="30" fill="url(#about_shield)" opacity="0.05" />
+
+              <!-- Center Saini Sweets emblem logo -->
+              <path d="M 50 25 L 70 45 L 70 65 L 50 80 L 30 65 L 30 45 Z" stroke="#8C1D1D" stroke-width="2"
+                fill="none" />
+              <path d="M 50 30 L 65 47 L 65 63 L 50 75 L 35 63 L 35 47 Z" fill="url(#about_shield)" />
+
+              <!-- Text inside Emblem -->
+              <text x="50" y="49" fill="#8C1D1D" font-family="'Playfair Display', serif" font-weight="bold"
+                font-size="6.5" text-anchor="middle">SAINI</text>
+              <text x="50" y="56" fill="#D4AF37" font-family="'Outfit', sans-serif" font-weight="bold" font-size="4.5"
+                text-anchor="middle">SWEETS</text>
+              <text x="50" y="63" fill="#1E1E1E" font-family="'Outfit', sans-serif" font-weight="normal" font-size="3"
+                text-anchor="middle">BALLAH</text>
+
+              <!-- Garland overlay decoration -->
+              <path d="M 28 45 Q 50 5 72 45" stroke="#E05A10" stroke-width="1" stroke-linecap="round"
+                stroke-dasharray="1 3" />
+
+              <defs>
+                <linearGradient id="about_shield" x1="50" y1="25" x2="50" y2="80" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#FFFDF9" />
+                  <stop offset="100%" stop-color="#FEF3C7" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <div class="mt-6 border-t border-primary/10 pt-4 text-center">
+              <span class="block font-playfair font-bold text-lg text-primary">Est. Ballah, Karnal</span>
+              <p class="text-xs text-charcoal-light mt-1">Bringing traditional flavors, modern quality standards, and
+                pure ingredients to your family celebrations.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Text & Story -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-secondary font-bold text-sm tracking-widest uppercase">Our Story & Heritage</span>
+          <h2 class="text-3xl sm:text-4xl font-bold font-playfair text-charcoal">
+            Generations of Pure Taste and Traditional Craftsmanship
+          </h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+
+          <div class="space-y-4 text-charcoal-light text-sm sm:text-base">
+            <p>
+              At <strong>Saini Sweets, Fast Food & Bakery</strong>, our passion is preserving the authentic taste of
+              North Indian sweet-making and baking heritage. Centered in VPO Ballah, Karnal, we have earned a local
+              reputation for uncompromising quality and cleanliness.
+            </p>
+            <p>
+              Whether it is our golden, crispy <strong>Special Jalebis</strong> made from rich saffron syrup, our
+              crumbly and caramelized <strong>Milk Cake</strong>, our custom celebration <strong>Cakes &
+                Pastries</strong>, or our savory, spiced hot <strong>Samosas</strong>, every recipe is passed down
+              through generations.
+            </p>
+            <p>
+              We craft each batch and bake fresh daily under strict hygienic controls using 100% fresh dairy
+              ingredients, pure Desi Ghee, and high-quality baking ingredients. Our goal is to bring the rich, festive
+              sweetness of Indian hospitality straight to your home.
+            </p>
+          </div>
+
+          <!-- Feature Bullets -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            <div class="flex items-center space-x-2.5">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span class="text-sm font-semibold text-charcoal">100% Vegetarian Preparation</span>
+            </div>
+            <div class="flex items-center space-x-2.5">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span class="text-sm font-semibold text-charcoal">Hygienically Packed & Handled</span>
+            </div>
+            <div class="flex items-center space-x-2.5">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span class="text-sm font-semibold text-charcoal">Prepared with Pure Desi Ghee</span>
+            </div>
+            <div class="flex items-center space-x-2.5">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span class="text-sm font-semibold text-charcoal">Fresh Ingredients Daily</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Contact & Map Section -->
+  <section id="contact-section" class="py-16 md:py-24 bg-cream-dark/20 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <div class="text-center space-y-4 mb-12">
+        <span class="text-secondary font-bold text-sm tracking-widest uppercase">Come Visit Us</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-playfair text-charcoal">
+          Location & Operating Hours
+        </h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+
+        <!-- Contact Information Cards (Left) -->
+        <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+
+          <!-- Contact Detail Card -->
+          <div class="bg-cream rounded-3xl p-6 md:p-8 border border-primary/10 shadow-premium space-y-6 flex-grow">
+
+            <!-- Address -->
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                <i data-lucide="map-pin" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-bold text-secondary uppercase tracking-widest">Our Store Address</span>
+                <span class="block text-base font-bold text-charcoal mt-0.5">Saini Sweets & Fast Food</span>
+                <p class="text-sm text-charcoal-light mt-1 leading-relaxed">
+                  Main Market Road, VPO Ballah, <br>
+                  District Karnal, Haryana, India - 132040
+                </p>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                <i data-lucide="clock" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-bold text-secondary uppercase tracking-widest">Operating Hours</span>
+                <span class="block text-base font-bold text-charcoal mt-0.5">6:00 AM - 10:00 PM</span>
+                <p class="text-sm text-charcoal-light mt-1">Open 7 days a week (including public holidays)</p>
+              </div>
+            </div>
+
+            <!-- Call/Order Details -->
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                <i data-lucide="phone" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-bold text-secondary uppercase tracking-widest">Phone & Orders</span>
+                <a href="tel:+919034002077"
+                  class="block text-base font-bold text-charcoal mt-0.5 hover:text-primary transition-colors">+91 90340
+                  02077</a>
+                <p class="text-sm text-charcoal-light mt-1">Call for sweet bookings, catering orders, and pickup
+                  arrangements.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Socials and Call to Action Banner -->
+          <div
+            class="bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-6 md:p-8 text-white border border-gold/20 shadow-premium flex flex-col justify-between">
+            <h3 class="text-xl font-bold font-playfair mb-3">Connect on Social Media</h3>
+            <p class="text-xs text-white/80 leading-relaxed mb-6">
+              Follow us to check out live videos, special holiday gift boxes, fresh sweet preparations, and local menu
+              announcements.
+            </p>
+
+            <div class="flex items-center space-x-4">
+              <a href="https://www.facebook.com/sainisweetsBallah/" target="_blank"
+                class="w-12 h-12 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center text-white transition-all duration-300 transform hover:-translate-y-1"
+                aria-label="Facebook">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </a>
+              <a href="https://www.instagram.com/explore/locations/383856305139491/saini-sweets-fast-food/"
+                target="_blank"
+                class="w-12 h-12 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center text-white transition-all duration-300 transform hover:-translate-y-1"
+                aria-label="Instagram">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Google Map Section (Right) -->
+        <div class="lg:col-span-7">
+          <div
+            class="w-full h-full min-h-[350px] md:min-h-[450px] bg-cream border border-primary/10 rounded-3xl overflow-hidden shadow-premium p-2 flex flex-col">
+            <!-- Dynamic Custom Map Header indicating center -->
+            <div
+              class="px-4 py-3 flex items-center justify-between text-xs text-charcoal-light border-b border-primary/5">
+              <span class="flex items-center font-semibold">
+                <span class="w-2 h-2 mr-2 bg-rose-500 rounded-full animate-ping"></span>
+                Ballah, Karnal Location Map
+              </span>
+              <a href="https://maps.google.com/maps?q=Saini%20Sweets%20%26%20Fast%20Food,%20Ballah,%20Karnal,%20Haryana"
+                target="_blank" class="text-primary hover:underline font-semibold flex items-center">
+                Open in Maps <i data-lucide="external-link" class="w-3.5 h-3.5 ml-1"></i>
+              </a>
+            </div>
+
+            <!-- Map Iframe centered on the coordinates VPO Ballah, Main Market Road -->
+            <iframe class="w-full flex-grow rounded-2xl border-0"
+              src="https://maps.google.com/maps?q=Saini%20Sweets%20%26%20Fast%20Food,%20Ballah,%20Karnal,%20Haryana&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal text-white pt-12 pb-24 md:pb-12 border-t-2 border-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-white/10">
+
+        <!-- Brand Info -->
+        <div class="md:col-span-6 space-y-4">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 rounded-[1.75rem] bg-gradient-to-tr from-primary to-secondary flex items-center justify-center border border-white/20">
+              <img src="./images/logo.jpg" alt="logo" class="rounded-[1.75rem] w-full h-full object-cover">
+            </div>
+            <span class="font-playfair font-bold text-xl tracking-wide text-white">Saini Sweets, Fast Food &
+              Bakery</span>
+          </div>
+          <p class="text-xs text-white/60 max-w-sm">
+            Enjoy top-tier Indian sweets, fresh baked goods, and fast food cooked with pure ingredients. Delivering
+            authentic taste and traditional recipe excellence since our establishment.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="md:col-span-3 space-y-3">
+          <span class="block text-xs uppercase font-bold tracking-widest text-gold">Navigation</span>
+          <ul class="text-xs text-white/70 space-y-2.5">
+            <li><a href="#" class="hover:text-gold transition-colors">Home</a></li>
+            <li><a href="#menu-section" class="hover:text-gold transition-colors">Digital Menu</a></li>
+            <li><a href="#about-section" class="hover:text-gold transition-colors">Heritage & Story</a></li>
+            <li><a href="#contact-section" class="hover:text-gold transition-colors">Find Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Order Information -->
+        <div class="md:col-span-3 space-y-3">
+          <span class="block text-xs uppercase font-bold tracking-widest text-gold">Instant Contact</span>
+          <ul class="text-xs text-white/70 space-y-2">
+            <li class="flex items-center"><i data-lucide="phone" class="w-3.5 h-3.5 mr-2 text-secondary"></i> +91 90340
+              02077</li>
+            <li class="flex items-center"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-2 text-secondary"></i> Ballah,
+              Karnal, HR</li>
+            <li class="flex items-center"><i data-lucide="clock" class="w-3.5 h-3.5 mr-2 text-secondary"></i> Open 6:00
+              AM - 10:00 PM</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Credits -->
+      <div
+        class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-white/40 space-y-3 sm:space-y-0">
+        <span>© 2026 Saini Sweets, Fast Food & Bakery. All Rights Reserved.</span>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-white/60">Privacy Policy</a>
+          <a href="#" class="hover:text-white/60">Terms of Pickup</a>
+          <span class="text-white/30">|</span>
+          <span>Traditional Vegetarian Delights</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Business Logic and Javascript State Management -->
+  <script src="menu.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

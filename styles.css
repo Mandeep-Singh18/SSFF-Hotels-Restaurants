@@ -1,0 +1,67 @@
+/* Global font: Inter — clean and easy to read */
+*, *::before, *::after {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFDF9;
+}
+::-webkit-scrollbar-thumb {
+  background: #D2530A;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F5A623;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Keyframes for custom interactive effects */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Subtle texture background pattern */
+.bg-traditional-pattern {
+  background-color: #FFFDF9;
+  background-image: radial-gradient(#D2530A0a 1.5px, transparent 1.5px), radial-gradient(#D2530A0a 1.5px, #FFFDF9 1.5px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Shimmering shine effect on hover for cards */
+.shimmer-hover {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-hover::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  transition: transform 0.6s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+.shimmer-hover:hover::after {
+  transform: translate(50%, 50%) rotate(45deg);
+}
